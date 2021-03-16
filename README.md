@@ -6,7 +6,7 @@
 함수와 메소드의 차이 <br>
 콘솔과 웹에서 실행하는 기본적인 코드실행 <br>
 > 요약<br>
-htmt에서 팝업 띄우기<br>
+html에서 팝업 띄우기<br>
 >  script 태그를 이용<br>
     alert('hello world!');
     웹 브라우저에서 팝업 실행
@@ -23,3 +23,5 @@ console.log('Hello World...!');<br>
 이처럼 선언가능<br>
 let은 변수 선언<br>
 name은 변수명<br>
+
+>사칙연산자는 다른 언어들과 동일함
