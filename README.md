@@ -14,7 +14,7 @@ ex)typeof 10, typeof "자료형"<br>
 >강제 자료형 변환이 가능한 함수가 있음<br>
 종류로는 Nember(), String(), Boolean()이 있음<br>
 
-사용법은<br>
+>사용법은<br>
 console.log(Number("10")); <--이건 "10"이란 문자열을 숫자로 변경하여 출력하는것<br>
 let num = Number("안녕"); <--이건 숫자로 변경이 불가하기에 출력이  NaN이 출력됨<br>
 
