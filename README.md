@@ -1,4 +1,38 @@
 # 문성운 [201840117]
+## [5월4일]
+>표준 내장 객체<br>
+기본적으로 제공하는 객체들<br>
+내장되어있는 함수를 사용할 수 있다<br>
+대표적으로 날짜관련 객체인 Date()가있는데<br>
+그 안에 함수인 getHours()등등을 사용할 수 있다<br>
+
+>let date = new Date(); 객체선언<br>
+console.log(date.getMonth()); 현재 월 출력 ==> 4가 출력됨<br>
+4가 출력되는 이유는 인덱스값으로 카운트하기때문에 0부터 시작<br>
+
+>Object 객체<br>
+자바스크립트의 최상위 객체<br>
+생성<br>
+var object={<br>
+    name:"성운",<br>
+    age:23<br>
+}; <br>
+Object 객체의 메소드<br>
+constructor() : 객체의 생성자 함수를 나타냄<br>
+hasOwnProperty(name) : 객체가 name 속성을 가지고 있는지 확인<br>
+isPrototypeof(object) : 객체가 object의 프로토타입인지 검사<br>
+propertyIsEnumerable(name) : 반복문으로 열거 가능 여부 확인<br>
+toLocaleString() : 객체를 호스트 환경에 맞는 언어의 문자열로 변경<br>
+toString() : 객체를 문자열로 변경<br>
+valueOf()  : 객체의 값을 표시<br>
+
+
+>String 객체<br>
+문자열을 표현할 때 사용하는 객체<br>
+String 객체의 속성<br>
+length() : 문자열의 길이를 표시<br>
+
+
 ## [4월13일]
 >함수<br>
 
