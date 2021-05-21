@@ -33,12 +33,6 @@ console.log('- process.uptime() : ' + process.uptime());
 - cpus() : CPU의 정보를 담은 객체를 리턴
 - getNetworkInterfaces() : 네트워크 인터페이스의 정보를 담은 배열을 리턴
 
-※ Url 모듈의 메소드
-
-- parse(urlStr [, ParseQueryString = false, slashesDenoteHost = false]) : URL 문자열을 URL 객체로 변환하여 리턴
-- format(urlObj) : URL 객체를 URL 문자열로 변환하여 리턴
-- resolve(from,to) : 매게 변수를 조합하여 완전한 URL 문자열을 생성해 리턴
-
 ```jsx
 var os = require('os');
 
@@ -53,7 +47,11 @@ for(var i = 0; i < cpus.length; i++) {
 	console.log("speed: " + cpus[i].speed);
 }
 ```
+### Url 모듈의 메소드
 
+- parse(urlStr [, ParseQueryString = false, slashesDenoteHost = false]) : URL 문자열을 URL 객체로 변환하여 리턴
+- format(urlObj) : URL 객체를 URL 문자열로 변환하여 리턴
+- resolve(from,to) : 매게 변수를 조합하여 완전한 URL 문자열을 생성해 리턴
 
 
 
