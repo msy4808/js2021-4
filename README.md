@@ -1,4 +1,63 @@
 # 문성운 [201840117]
+## [5월18일]
+>### Process 객체
+
+- argv : 실행 매개 변수를 나타냄
+- env  : 컴퓨터 환경과 관련된 정보를 나타냄
+- version : Node.js 버전을 나타냄
+- versions : Niode.js와 종속된 프로그램 버전을 나타냄
+- arch : 프로세서의 아키텍처를 나타냄
+- platform : 플랫폼을 나타냄
+
+```jsx
+console.log('- process.env : ' + process.env);
+console.log('- process.version : ' + process.version);
+console.log('- process.versions : ' + process.versions);
+console.log('- process.arch : ' + process.arch);
+console.log('- process.platform : ' + process.platform);
+console.log('- process.memoryUsage() : ' + process.memoryUsage());
+console.log('- process.uptime() : ' + process.uptime());
+```
+
+### os 객체
+
+- hostname() : 운영체제의 호스트 이름을 리턴
+- type() : 운영체제의 이름을 리턴
+- platform() : 운영체제의 플랫폼을 리턴
+- arch() : 운영체제의 아키텍처를 리턴
+- release() : 운영체제의 버전을 리턴
+- uptime() : 운영체제가 실행된 시간을 리턴
+- loadavg() : 로드 에버리지 정보를 담은 배열을 리턴
+- totalmem() : 시스템의 총 메모리를 리턴
+- freemem() : 시스템의 사용 가능한 메모리를 리턴
+- cpus() : CPU의 정보를 담은 객체를 리턴
+- getNetworkInterfaces() : 네트워크 인터페이스의 정보를 담은 배열을 리턴
+
+※ Url 모듈의 메소드
+
+- parse(urlStr [, ParseQueryString = false, slashesDenoteHost = false]) : URL 문자열을 URL 객체로 변환하여 리턴
+- format(urlObj) : URL 객체를 URL 문자열로 변환하여 리턴
+- resolve(from,to) : 매게 변수를 조합하여 완전한 URL 문자열을 생성해 리턴
+
+```jsx
+var os = require('os');
+
+console.log(os.tmpdir());
+console.log(os.type());
+
+var cpus = os.cpus();
+
+for(var i = 0; i < cpus.length; i++) {
+	console.log("CPU[" + (i+1) + "]");
+	console.log("model: " + cpus[i].model);
+	console.log("speed: " + cpus[i].speed);
+}
+```
+
+
+
+
+
 ## [5월11일]
 >표준 내장 객체<br>
 기본적으로 제공하는 객체들<br>
