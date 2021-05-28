@@ -1,4 +1,158 @@
 # 문성운 [201840117]
+## [5월25일]
+## express란
+
+- Node.js를 사용하여 서버를 개발(구현)하게 만들어주는 프레임워크
+
+### express의 기본메소드
+
+> express() : 서버 매플리케이션 객체(Express 객체)를 생성
+
+> use() : 요청이 왔을때 실행할 함수를 설정
+
+> listen() : 서버를 실행
+
+### express 기본예제
+
+```jsx
+const express = require('express');
+
+const app = express();
+
+app.use((request, response) => {
+    response.send('<h1>express!!</h>');
+});
+
+app.listen(52273, () => {
+    console.log('Server Running at http://127.0.0.1:52273');
+})
+```
+
+## 페이지라우팅
+
+- 클라이언트 요청에 적절한 페이지를 제공하는 기술
+
+### express 모듈의 라우팅 메소드
+
+> get(path, callback) : GET요청이 왔을때 이벤트 리스너를 지정
+
+> post(path, callback) : POST요청이 왔을때 이벤트 리스너를 지정
+
+> put(path, callback) : PUT요청이 왔을때 이벤트 리스너를 지정
+
+> delete(path, callback) : DELETE요청이 왔을때 이벤트 리스너를 지정
+
+> all(path, callback) : 모든 요청이 왔을때 이벤트 리스너를 지정
+
+### 페이지 라우팅 기본예제
+
+```jsx
+const express = require('express');
+
+const app = express();
+
+app.get("/page/:id", (request, response) => {
+    const id = request.params.id;
+
+    response.send(`<h1>${id} express Page!!</h>`);
+});
+
+app.listen(52273, () => {
+    console.log('Server Running at http://127.0.0.1:52273');
+})
+```
+
+## response 객체의 메소드
+
+> send() : 데이터 본문을 제공
+
+> status() : 상태 코드를 제공
+
+> set() : 헤더를 설정
+
+send()메소드는 가장 마지막에 실행해야 하며, 두 번 실행 할 수 없음
+
+## Content-Type
+
+- 서버가 Content-Type을 제공하며 웹브라우저는 헤더를 확인, 제공된 데이터의 형태를 확인
+    - MIME라는 문자열로 제공됨
+
+### MIME 형식
+
+> text/plain : 기본적인 텍스트
+
+> text/html :  HTML 데이터를 의미
+
+> image/png : PNG 데이터를 의미
+
+> audio/mpe : MP3 음악 파일을 의미
+
+> video/mpeg : MPEG 비디오 파일을 의미
+
+> application/json : JSON 데이터를 의미
+
+> multipart/form-data : 입력 양식 데이터를 의미
+
+### Content-Type 지정 메소드
+
+- type() : Content-Type을 MIME형식으로 지정
+
+### Content-Type 기본예제
+
+```jsx
+const express = require('express');
+const fs = require('fs');
+
+const app = express();
+
+app.get("/image", (request, response) => {
+    fs.readFile('image.png', (error, data) => {
+        response.type('image/png');
+        response.send(data);
+    });
+});
+
+app.listen(52273, () => {
+    console.log('Server Running at http://127.0.0.1:52273');
+})
+```
+
+## HTTP 상태코드
+
+- 상태 코드란 서버가 클라이언트에 '해당 경로는 이러한 상태' 라고 알려주는 용도
+
+> HTTP 상태 코드 종류
+
+> 1XX : 처리중
+
+> 2XX : 성공
+
+> 3XX : 리다이렉트
+
+> 4XX : 클라이언트 오류
+
+> 5XX : 서버 오류
+
+### 상태 코드 지정 메소드
+
+- status() : 상태 코드를 지정
+
+### 상태 코드 지정 예제
+
+```jsx
+const express = require('express');
+
+const app = express();
+
+app.get("*", (request, response) => {
+    response.status(404);
+    response.send("해당 경로에는 파일이 없습니다.")
+});
+
+app.listen(52273, () => {
+    console.log('Server Running at http://127.0.0.1:52273');
+})
+```
 ## [5월18일]
 >### Process 객체
 
